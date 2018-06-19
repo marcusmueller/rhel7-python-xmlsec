@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        1.3.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Python bindings for the XML Security Library
 
 License:        MIT
@@ -87,5 +87,8 @@ rm -rf *.egg-info
 
 
 %changelog
+* Tue Jun 19 2018 Miro Hrončok <mhroncok@redhat.com> - 1.3.3-2
+- Rebuilt for Python 3.7
+
 * Thu Jan 25 2018 Jeremy Cline <jeremy@jcline.org> - 1.3.3-1
 - Initial package.
