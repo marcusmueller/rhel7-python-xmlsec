@@ -9,6 +9,7 @@ License:        MIT
 URL:            https://pypi.python.org/pypi/%{srcname}
 Source0:        https://files.pythonhosted.org/packages/source/x/%{srcname}/%{srcname}-%{version}.tar.gz
 
+BuildRequires:  gcc
 BuildRequires:  python2-devel
 BuildRequires:  python3-devel
 BuildRequires:  libxml2-devel >= 2.9.1
