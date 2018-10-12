@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        1.3.3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Python bindings for the XML Security Library
 
 License:        MIT
@@ -10,7 +10,6 @@ URL:            https://pypi.python.org/pypi/%{srcname}
 Source0:        https://files.pythonhosted.org/packages/source/x/%{srcname}/%{srcname}-%{version}.tar.gz
 
 BuildRequires:  gcc
-BuildRequires:  python2-devel
 BuildRequires:  python3-devel
 BuildRequires:  libxml2-devel >= 2.9.1
 BuildRequires:  xmlsec1-devel >= 1.2.18
@@ -18,23 +17,6 @@ BuildRequires:  libtool-ltdl-devel
 
 
 %description
-%{summary}.
-
-
-%package -n python2-%{srcname}
-Summary: %{summary}
-%{?python_provide:%python_provide python2-%{srcname}}
-BuildRequires: %{py2_dist lxml}
-BuildRequires: %{py2_dist pkgconfig}
-BuildRequires: %{py2_dist pytest}
-Requires: libxml2 >= 2.9.1
-Requires: xmlsec1 >= 1.2.18
-Requires: xmlsec1-openssl
-Requires: %{py2_dist lxml}
-Requires: %{py2_dist pkgconfig}
-
-
-%description -n python2-%{srcname}
 %{summary}.
 
 
@@ -61,23 +43,14 @@ rm -rf *.egg-info
 
 
 %build
-%py2_build
 %py3_build
 
 
 %install
-%py2_install
 %py3_install
 
 
 # Tests aren't available
-
-
-%files -n python2-%{srcname}
-%license LICENSE
-%doc README.rst
-%{python2_sitearch}/xmlsec*.so
-%{python2_sitearch}/xmlsec-%{version}-*.egg-info
 
 
 %files -n python3-%{srcname}
@@ -88,6 +61,10 @@ rm -rf *.egg-info
 
 
 %changelog
+* Fri Oct 12 2018 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl> - 1.3.3-4
+- Python2 binary package has been removed
+  See https://fedoraproject.org/wiki/Changes/Mass_Python_2_Package_Removal
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.3.3-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
