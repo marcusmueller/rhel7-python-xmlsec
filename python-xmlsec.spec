@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        1.3.3
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Python bindings for the XML Security Library
 
 License:        MIT
@@ -61,6 +61,9 @@ rm -rf *.egg-info
 
 
 %changelog
+* Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.3.3-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Fri Oct 12 2018 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl> - 1.3.3-4
 - Python2 binary package has been removed
   See https://fedoraproject.org/wiki/Changes/Mass_Python_2_Package_Removal
